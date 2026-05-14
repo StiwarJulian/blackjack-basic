@@ -20,8 +20,8 @@
         <div class="row mt-2">
             <div class="col text-center">
                 <button class="btn btn-primary" id="nuevoJuego">Nuevo Juego</button>
-                <button class="btn btn-success" id="pedirCarta">Pedir Carta</button>
-                <button class="btn btn-danger" id="plantarse">Plantarse</button>
+                <button disabled class="btn btn-success" id="pedirCarta">Pedir Carta</button>
+                <button disabled class="btn btn-danger" id="plantarse">Plantarse</button>
             </div>
         </div>
     
@@ -29,8 +29,7 @@
             <div class="col">
                 <h2>Jugador - <small>0</small></h2>
                 
-                <div id="jugador-cartas">
-                    
+                <div id="jugador-cartas" class="divCartas">
                 </div>
             </div>
         </div>
@@ -39,10 +38,7 @@
             <div class="col">
                 <h2>Computadora - <small>0</small></h2>
                 
-                <div id="computadora-cartas">
-                    <!-- <img class="carta" src="assets/cartas/10C.png" alt="">
-                    <img class="carta" src="assets/cartas/10C.png" alt="">
-                    <img class="carta" src="assets/cartas/10C.png" alt=""> -->
+                <div id="computadora-cartas" class="divCartas">
                 </div>
             </div>
         </div>
@@ -51,5 +47,9 @@
     <script src="https://cdn.jsdelivr.net/npm/@hiseb/confetti@2.1.0/dist/confetti.min.js"></script>
     <script src="assets/js/underscore-min.js"></script>
     <script src="assets/js/juego.js"></script>
+
+    <script>
+        juego.inicializarJuego();
+    </script>
 </body>
 </html>
