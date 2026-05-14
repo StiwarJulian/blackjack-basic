@@ -154,7 +154,7 @@ if (puntosJugador > CONFIG.MAX_PUNTOS) {
       acumularPuntosJugador(carta, turnoPC);
       ajustarAs(turnoPC);
       crearCarta(carta, turnoPC);
-      setTimeout(() => mostrarResultado(MSGS.GANASTE, true), 100);
+      setTimeout(() => mostrarResultado(MSGS.PERDISTE, false), 100);
       return;
     }
 
