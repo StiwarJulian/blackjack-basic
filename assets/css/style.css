@@ -1,28 +1,299 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Lato:wght@300;400;700&display=swap');
+
 html, body {
     margin: 0;
-    background-color: #2f4f30;
+    background-color: #1a3d2b;
+    background-image: radial-gradient(ellipse at top, #2d5a3d 0%, #1a3d2b 50%, #0f2418 100%);
     color: #fff;
+    min-height: 100vh;
 }
 
 .title {
     text-align: center;
-    background-color: black;
-    color: white;
+    background: linear-gradient(135deg, #0d2818 0%, #1a4d32 50%, #0d2818 100%);
+    padding: 25px 15px;
+    border-bottom: 4px solid #d4af37;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.6);
+}
+
+.title-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+}
+
+.title-icon {
     font-size: 3rem;
-    padding: 20px;
+    filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.5));
+    animation: float 3s ease-in-out infinite;
+}
+
+@keyframes float {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-5px); }
+}
+
+.title h1 {
+    font-family: "Playfair Display", Georgia, serif;
+    font-size: 2.8rem;
+    font-weight: 700;
+    color: #f5f5f5;
+    letter-spacing: 6px;
+    margin: 0;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7), 0 0 20px rgba(212, 175, 55, 0.3);
+}
+
+.subtitle {
+    font-family: "Lato", sans-serif;
+    font-size: 1rem;
+    font-weight: 300;
+    color: #d4af37;
+    letter-spacing: 3px;
+    margin: 0;
+    text-transform: uppercase;
+}
+
+.btn-casino {
+    font-family: "Lato", sans-serif;
+    font-weight: 700;
+    font-size: 1rem;
+    padding: 12px 24px;
+    margin: 5px 10px;
+    border: 2px solid #d4af37;
+    border-radius: 6px;
+    background: linear-gradient(145deg, #1a4d32, #2d6b47);
+    color: #fff;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4), inset 0 1px 0 rgba(255, 255, 255, 0.1);
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+.btn-casino:hover:not(:disabled) {
+    background: linear-gradient(145deg, #2d6b47, #3d8b5a);
+    transform: translateY(-3px);
+    box-shadow: 0 6px 16px rgba(212, 175, 55, 0.4), inset 0 1px 0 rgba(255, 255, 255, 0.2);
+    border-color: #e5c04b;
+}
+
+.btn-casino:active:not(:disabled) {
+    transform: translateY(-1px);
+    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.3);
+}
+
+.btn-casino:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+    box-shadow: none;
+}
+
+.btn-icon {
+    margin-right: 8px;
+    font-size: 1.1em;
+}
+
+.btn-pedir {
+    background: linear-gradient(145deg, #1a4a6e, #2563a8);
+}
+
+.btn-pedir:hover:not(:disabled) {
+    background: linear-gradient(145deg, #2563a8, #2d7ac9);
+    box-shadow: 0 6px 16px rgba(37, 99, 168, 0.5), inset 0 1px 0 rgba(255, 255, 255, 0.2);
+}
+
+.btn-plantarse {
+    background: linear-gradient(145deg, #8b1a1a, #a52a2a);
+}
+
+.btn-plantarse:hover:not(:disabled) {
+    background: linear-gradient(145deg, #a52a2a, #c43a3a);
+    box-shadow: 0 6px 16px rgba(165, 42, 42, 0.5), inset 0 1px 0 rgba(255, 255, 255, 0.2);
 }
 
 .carta {
-    width: 150px;
-    height: 200px;
+    width: 100px;
+    height: 140px;
     position: relative;
-    margin-top: 20px;
-    margin-bottom: 20px;
-    margin-left: -75px;
-    left: 100px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    margin-right: 5px;
+    display: inline-block;
+    transition: transform 0.2s ease;
 }
 
-#computadora-cartas, #jugador-cartas {
-    min-height: 220px;
-    position: relative;
+.carta:hover {
+    transform: translateY(-5px);
+}
+
+#computadora-cartas,
+#jugador-cartas {
+    min-height: 160px;
+    padding: 10px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+}
+
+.divCartas {
+    min-height: 150px;
+}
+
+@media (min-width: 768px) {
+    .title {
+        padding: 35px 20px;
+    }
+
+    .title-icon {
+        font-size: 4rem;
+    }
+
+    .title h1 {
+        font-size: 3.5rem;
+        letter-spacing: 8px;
+    }
+
+    .subtitle {
+        font-size: 1.2rem;
+    }
+
+    .btn-casino {
+        font-size: 1.1rem;
+        padding: 14px 28px;
+    }
+
+    .carta {
+        width: 120px;
+        height: 168px;
+        margin-left: -60px;
+    }
+
+    .carta:first-child {
+        margin-left: 0;
+    }
+
+    #computadora-cartas,
+    #jugador-cartas {
+        min-height: 180px;
+        justify-content: flex-start;
+    }
+}
+
+@media (min-width: 1024px) {
+    .carta {
+        width: 150px;
+        height: 200px;
+        margin-left: -75px;
+    }
+
+    .carta:first-child {
+        margin-left: 0;
+    }
+
+    #computadora-cartas,
+    #jugador-cartas {
+        min-height: 220px;
+    }
+}
+
+.modal-content {
+    background-color: #2f4f30;
+    color: #fff;
+}
+
+.modal-header {
+    border-bottom-color: #4a6b45;
+}
+
+.modal-footer {
+    border-top-color: #4a6b45;
+}
+
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.7);
+    display: none;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+}
+
+.modal-dialog-custom {
+    width: 90%;
+    max-width: 400px;
+}
+
+.modal-content-custom {
+    background: #2f4f30;
+    color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+    overflow: hidden;
+}
+
+.modal-header-custom {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 20px;
+    border-bottom: 1px solid #4a6b45;
+}
+
+.modal-header-custom h5 {
+    margin: 0;
+    font-size: 1.25rem;
+}
+
+.close-btn {
+    background: none;
+    border: none;
+    color: #fff;
+    font-size: 2rem;
+    line-height: 1;
+    cursor: pointer;
+    padding: 0;
+    width: 30px;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.close-btn:hover {
+    color: #ccc;
+}
+
+.modal-body-custom {
+    padding: 20px;
+    text-align: center;
+}
+
+.modal-body-custom p {
+    margin: 0;
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+.modal-footer-custom {
+    padding: 15px 20px;
+    border-top: 1px solid #4a6b45;
+    text-align: center;
+}
+
+.modal-footer-custom .btn-primary {
+    background: #4a6b45;
+    border: none;
+    padding: 10px 30px;
+}
+
+.modal-footer-custom .btn-primary:hover {
+    background: #5a7b55;
+}
+
+.btn-close {
+    filter: invert(1);
 }

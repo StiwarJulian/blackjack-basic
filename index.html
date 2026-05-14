@@ -11,17 +11,25 @@
 <body>
     
     <header class="title">
-        <h1>
-            Blackjack
-        </h1>
+        <div class="title-content">
+            <span class="title-icon">🎴</span>
+            <h1>BLACKJACK</h1>
+            <p class="subtitle">El juego de 21</p>
+        </div>
     </header>
 
     <div class="container">
         <div class="row mt-2">
             <div class="col text-center">
-                <button class="btn btn-primary" id="nuevoJuego">Nuevo Juego</button>
-                <button disabled class="btn btn-success" id="pedirCarta">Pedir Carta</button>
-                <button disabled class="btn btn-danger" id="plantarse">Plantarse</button>
+                <button class="btn btn-casino" id="nuevoJuego" aria-label="Iniciar un nuevo juego">
+                    <span class="btn-icon">🔄</span>Nuevo Juego
+                </button>
+                <button disabled class="btn btn-casino btn-pedir" id="pedirCarta" aria-label="Pedir una carta">
+                    <span class="btn-icon">🃏</span>Pedir Carta
+                </button>
+                <button disabled class="btn btn-casino btn-plantarse" id="plantarse" aria-label="Plantarse y terminar tu turno">
+                    <span class="btn-icon">✋</span>Plantarse
+                </button>
             </div>
         </div>
     
@@ -44,12 +52,31 @@
         </div>
     </div>
 
-    <script src="https://cdn.jsdelivr.net/npm/@hiseb/confetti@2.1.0/dist/confetti.min.js"></script>
-    <script src="assets/js/underscore-min.js"></script>
-    <script src="assets/js/juego.js"></script>
+    <div id="resultModal" class="modal-overlay" style="display: none;">
+        <div class="modal-dialog-custom">
+            <div class="modal-content-custom">
+                <div class="modal-header-custom">
+                    <h5 class="modal-title">Resultado</h5>
+                    <button type="button" class="close-btn" aria-label="Cerrar">&times;</button>
+                </div>
+                <div class="modal-body-custom">
+                    <p id="resultMessage" class="h4 text-center"></p>
+                </div>
+                <div class="modal-footer-custom">
+                    <button type="button" class="btn btn-primary">Aceptar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/@hiseb/confetti@2.1.0/dist/confetti.min.js" defer></script>
+    <script src="assets/js/underscore-min.js" defer></script>
+    <script src="assets/js/juego.js" defer></script>
 
     <script>
-        juego.inicializarJuego();
+        document.addEventListener("DOMContentLoaded", function() {
+            juego.inicializarJuego();
+        });
     </script>
 </body>
 </html>
